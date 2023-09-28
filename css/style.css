@@ -1,3 +1,5 @@
+@import url(https://db.onlinewebfonts.com/c/11d164da9b46e6f7955e396757e5ca70?family=AvenirNextCyr-Regular);
+@import url(https://db.onlinewebfonts.com/c/28f70728be1cb6dc87a8903182044dfd?family=AvenirNextCyr-Bold);
 :root {
   --color-breadcrumbs: rgba(65, 65, 64, 1);
   --color-button: rgba(255, 218, 0, 1);
@@ -8,10 +10,10 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Avenir Next Cyr";
   font-weight: 400;
-  font-size: 24px;
+  font-size: 14px;
   line-height: 21px;
+  font-family: "AvenirNextCyr-Regular";
   color: var(--color-main);
   max-width: 1920px;
   margin: auto;
@@ -26,8 +28,7 @@ body {
 }
 
 .office__breadcrumbs {
-  font-size: 14px;
-  font-weight: 450px;
+  font-weight: 450;
   display: flex;
   justify-content: flex-start;
   gap: 10px;
@@ -56,10 +57,17 @@ body {
   flex-direction: column;
   gap: 24px;
 }
+.office__info a {
+  font-size: 12px;
+  line-height: 18px;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.6;
+  border-bottom: 1px solid var(--color-main);
+}
 .office__subtitle {
   display: flex;
   gap: 18px;
-  font-size: 14px;
 }
 .office__subtitle span {
   font-weight: 700;
@@ -73,5 +81,28 @@ body {
   font-size: 16px;
 }
 .office__btn:hover {
-  background-color: var(--color-main);
+  background-color: rgb(213, 171, 0);
+}
+.office__sum-price {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+}
+.office__quest {
+  margin-top: 32px;
+  display: flex;
+  gap: 8px;
+}
+.office__quest img {
+  padding-bottom: 25px;
+}
+.office__link-phone {
+  font-size: 16px;
+}
+.office__link-phone a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  color: inherit;
+  border-bottom: 1px solid var(--color-main);
 }/*# sourceMappingURL=style.css.map */
