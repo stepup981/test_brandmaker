@@ -1,10 +1,10 @@
 @import url(https://db.onlinewebfonts.com/c/11d164da9b46e6f7955e396757e5ca70?family=AvenirNextCyr-Regular);
 @import url(https://db.onlinewebfonts.com/c/28f70728be1cb6dc87a8903182044dfd?family=AvenirNextCyr-Bold);
 :root {
-  --color-breadcrumbs: rgba(65, 65, 64, 1);
-  --color-button: rgba(255, 218, 0, 1);
-  --color-main: rgba(65, 65, 64, 1);
+  --color-yellow: rgba(255, 218, 0, 1);
+  --color-gray: rgba(65, 65, 64, 1);
   --color-green: rgba(39, 174, 96, 1);
+  --color-lightGray: rgba(245, 247, 249, 1);
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   font-size: 14px;
   line-height: 21px;
   font-family: "AvenirNextCyr-Regular";
-  color: var(--color-main);
+  color: var(--color-gray);
   max-width: 1920px;
   margin: auto;
   width: 100%;
@@ -35,19 +35,95 @@ body {
   margin-bottom: 32px;
 }
 .office__breadcrumbs a {
-  color: var(--color-main);
+  color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid var(--color-main);
+  border-bottom: 1px solid var(--color-gray);
 }
 .office__about {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+  position: relative;
 }
 .office__images {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+.office__first-image {
+  position: relative;
+}
+.office__info-click {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.office__info-child {
+  max-width: 21px;
+  max-height: 21px;
+  background-color: var(--color-yellow);
+  border-radius: 50%;
+  position: absolute;
+  padding: 2px 7px;
+  font-weight: 700;
+  font-size: 11px;
+  cursor: pointer;
+}
+.office__info-child:nth-child(1) {
+  top: 200px;
+  left: 226px;
+}
+.office__info-child:nth-child(2) {
+  top: 230px;
+  left: 500px;
+}
+.office__info-child:nth-child(3) {
+  top: 136px;
+  left: 248px;
+}
+.office__info-child:nth-child(4) {
+  top: 10px;
+  left: 108px;
+}
+.office__info-child:nth-child(5) {
+  top: 128px;
+  left: 136px;
+}
+.office__info-child:nth-child(6) {
+  top: 174px;
+  left: 660px;
+}
+.office__info-instok {
+  position: absolute;
+  top: 10px;
+  left: 630px;
+  bottom: 1770px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  padding: 0px 7px;
+}
+.office__info-circle {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-green);
+  border-radius: 50%;
+}
+.office__info-instok p {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 5%;
+  color: inherit;
+  line-height: 14.4px;
+  padding-bottom: 4px;
+}
+.office__bag {
+  position: relative;
 }
 .office__title {
   font-size: 32px;
@@ -63,17 +139,21 @@ body {
   text-decoration: none;
   color: inherit;
   opacity: 0.6;
-  border-bottom: 1px solid var(--color-main);
+  border-bottom: 1px solid var(--color-gray);
 }
 .office__subtitle {
   display: flex;
   gap: 18px;
+  background-color: var(--color-lightGray);
+}
+.office__subtitle img {
+  padding-left: 10px;
 }
 .office__subtitle span {
   font-weight: 700;
 }
 .office__btn {
-  background-color: var(--color-button);
+  background-color: var(--color-yellow);
   padding: 18px 79px;
   border: none;
   cursor: pointer;
@@ -81,7 +161,7 @@ body {
   font-size: 16px;
 }
 .office__btn:hover {
-  background-color: rgb(213, 171, 0);
+  background-color: rgb(198, 160, 10);
 }
 .office__sum-price {
   display: grid;
@@ -104,5 +184,5 @@ body {
   font-size: 24px;
   font-weight: 700;
   color: inherit;
-  border-bottom: 1px solid var(--color-main);
+  border-bottom: 1px solid var(--color-gray);
 }/*# sourceMappingURL=style.css.map */
