@@ -394,6 +394,11 @@ body {
     padding: 32px;
   }
 
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__info h1 {
     font-size: 28px;
     line-height: 1px;
@@ -590,11 +595,14 @@ body {
 
 
 @media (max-width: 600px) {
-  .office {
+  .swiper-pagination {
+    margin-left: 40%;
+  }
 
+  .office {
     &__subtitle {
-    display: flex;
-    justify-content: center;
+      display: flex;
+      justify-content: center;
     }
 
     &__subtitle img {

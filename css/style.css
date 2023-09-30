@@ -334,6 +334,10 @@ body {
 .modal-window__info {
   padding: 32px;
 }
+.modal-window__text {
+  display: flex;
+  flex-direction: column;
+}
 .modal-window__info h1 {
   font-size: 28px;
   line-height: 1px;
@@ -503,6 +507,9 @@ body {
   }
 }
 @media (max-width: 600px) {
+  .swiper-pagination {
+    margin-left: 40%;
+  }
   .office__subtitle {
     display: flex;
     justify-content: center;
