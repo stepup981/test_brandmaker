@@ -1,9 +1,9 @@
+// всплывающие окна на картинке с информацией о цене
 document.addEventListener("DOMContentLoaded", function () {
   const infoChildren = document.querySelectorAll(".office__info-child");
 
   infoChildren.forEach(function (infoChild) {
     infoChild.addEventListener("click", function () {
-      // find the popup inside this infoChild
       const popup = this.querySelector(".office__info-popup-hidden");
 
       if (popup.style.display === "none") {
@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+// подсчитывание общей суммы в корзине
 const incrementBtns = document.querySelectorAll(".office__counter-btnup");
 const decrementBtns = document.querySelectorAll(".office__counter-btndown");
 const counters = document.querySelectorAll(".office__counter-value");
@@ -65,6 +67,7 @@ function updateTotalPrice() {
 
 updateTotalPrice();
 
+// открывание модального окна для ввода номера телефона
 document.querySelectorAll(".office__btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     const modalOverlay = document.querySelector(".modal-overlay");
@@ -79,4 +82,60 @@ document.querySelector(".modal-window__flag").addEventListener("click", () => {
   const modalWindow = document.querySelector(".modal-window");
   modalOverlay.style.display = "none";
   modalWindow.style.display = "none";
+});
+
+
+// modal window 'placeholder'
+const phoneInput = document.getElementById("phone");
+
+phoneInput.addEventListener("focus", () => {
+  if (!phoneInput.value.startsWith("+7")) {
+    phoneInput.value = "+7 " + phoneInput.value.replace(/\D/g, "");
+  }
+});
+
+phoneInput.addEventListener("input", () => {
+  const inputValue = phoneInput.value.replace(/\D/g, "");
+  let prefix = "";
+
+  if (!inputValue.startsWith("7") && inputValue.length > 0) {
+    prefix = "+7 ";
+  }
+
+  let formattedValue = `${prefix}${inputValue.replace(
+    /(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/,
+    "$1 ($2) $3-$4-$5"
+  )}`.trim();
+
+  if (formattedValue.charAt(0) !== "+") {
+    formattedValue = "+" + formattedValue;
+  }
+
+  const start = phoneInput.selectionStart;
+  const end = phoneInput.selectionEnd;
+  phoneInput.value = formattedValue;
+
+  const adjustment = formattedValue.length - inputValue.length;
+  phoneInput.setSelectionRange(start + adjustment, end + adjustment);
+});
+
+phoneInput.addEventListener("keydown", (event) => {
+  const allowedKeys = [
+    "Backspace",
+    "Delete",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowUp",
+    "ArrowDown",
+  ];
+  if (!/^\d$/.test(event.key) && !allowedKeys.includes(event.key)) {
+    event.preventDefault();
+  }
+});
+
+var swiper = new Swiper('.swiper-container', {
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
 });

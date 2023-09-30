@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test Brandmaker</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   </head>
 
   <body>
@@ -77,7 +78,7 @@
               </div>
               <div class="office__info-child">
                 6
-                <div class="office__info-popup-hidden">
+                <div class="office__info-popup-hidden  move-left">
                   <div class="office__info-popup">
                     <p class="office__info-name">Кресло посетителя</p>
                     <p class="office__info-price">от 13 500 руб</p>
@@ -85,11 +86,125 @@
                 </div>
               </div>
             </div>
-            
-            <img src="./assets/picture/second.png" alt="" />
-            <img src="./assets/picture/third.png" alt="" />
-            <img src="./assets/picture/fourth.png" alt="" />
+
+            <img
+              class="office__second-image"
+              src="./assets/picture/second.png"
+              alt=""
+            />
+            <img
+              class="office__third-image"
+              src="./assets/picture/third.png"
+              alt=""
+            />
+            <img
+              class="office__fourth-image"
+              src="./assets/picture/fourth.png"
+              alt=""
+            />
           </div>
+         
+          <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="office__images">
+              <img
+                class="office__first-image"
+                src="./assets/picture/first.png"
+                alt=""
+              />
+              <div class="office__info-instok">
+                <div class="office__info-circle"></div>
+                <p>в наличии</p>
+              </div>
+              <div class="office__info-click">
+                <div class="office__info-child">
+                  1
+                  <div class="office__info-popup-hidden">
+                    <div class="office__info-popup">
+                      <p class="office__info-name">Стол руководителя</p>
+                      <p class="office__info-price">от 27 900 руб</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="office__info-child">
+                  2
+                  <div class="office__info-popup-hidden">
+                    <div class="office__info-popup">
+                      <p class="office__info-name">Брифинг-приставка</p>
+                      <p class="office__info-price">от 14 600 руб</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="office__info-child">
+                  3
+                  <div class="office__info-popup-hidden">
+                    <div class="office__info-popup">
+                      <p class="office__info-name">Тумба с ящиками</p>
+                      <p class="office__info-price">от 10 500 руб</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="office__info-child">
+                  4
+                  <div class="office__info-popup-hidden">
+                    <div class="office__info-popup">
+                      <p class="office__info-name">Шкаф для одежды</p>
+                      <p class="office__info-price">от 55 000 руб</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="office__info-child">
+                  5
+                  <div class="office__info-popup-hidden">
+                    <div class="office__info-popup">
+                      <p class="office__info-name">Кресло руководителя</p>
+                      <p class="office__info-price">от 43 800 руб</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="office__info-child">
+                  6
+                  <div class="office__info-popup-hidden move-left">
+                    <div class="office__info-popup">
+                      <p class="office__info-name">Кресло посетителя</p>
+                      <p class="office__info-price">от 13 500 руб</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="office__images">
+              <img
+                class="office__second-image"
+                src="./assets/picture/second.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="office__images">
+              <img
+                class="office__third-image"
+                src="./assets/picture/third.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="office__images">
+              <img
+                class="office__fourth-image"
+                src="./assets/picture/fourth.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
 
           <div class="office__bag">
             <h1 class="office__title">GAMMA DIRECT</h1>
@@ -293,7 +408,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="modal-overlay"></div>
       <div class="modal-window">
         <img class="modal-window__flag" src="./assets/icon/close.svg" alt="" />
@@ -306,18 +421,26 @@
           </p>
           <div class="modal-window__phone">
             <img src="./assets/icon/russia.svg" alt="" />
-            <input type="tel" id="phone" placeholder="+7 (999) 999-99-99"
-            pattern="^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$" required>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="+7 (999) 999-99-99"
+              pattern="\+7[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}"
+              required
+            />
           </div>
           <div class="modal-window__button">
             <button class="modal-window__btn">Отправить заявку</button>
-            <a href="">Отправляя заявку вы соглашаетесь с политикой обработки
-              персональной информации</a>
+            <a href=""
+              >Отправляя заявку вы соглашаетесь с политикой обработки
+              персональной информации</a
+            >
           </div>
         </div>
       </div>
     </div>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
