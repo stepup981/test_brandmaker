@@ -1,16 +1,15 @@
 // всплывающие окна на картинке с информацией о цене
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const infoChildren = document.querySelectorAll(".office__info-child");
 
-  infoChildren.forEach(function (infoChild) {
+  infoChildren.forEach((infoChild) => {
     infoChild.addEventListener("click", function () {
       const popup = this.querySelector(".office__info-popup-hidden");
 
-      if (popup.style.display === "none") {
-        popup.style.display = "block";
-      } else {
-        popup.style.display = "none";
+      if (!popup.style.display || popup.style.display === "none") {
+        return popup.style.display = "block";
       }
+      popup.style.display = "none";
     });
   });
 });
@@ -68,24 +67,18 @@ function updateTotalPrice() {
 updateTotalPrice();
 
 // открывание модального окна для ввода номера телефона
-document.querySelectorAll(".office__btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const modalOverlay = document.querySelector(".modal-overlay");
-    const modalWindow = document.querySelector(".modal-window");
-    modalOverlay.style.display = "block";
-    modalWindow.style.display = "block";
-  });
-});
+const toggleModalDisplay = (display) => {
+  const items = [".modal-overlay", ".modal-window"];
+  items.forEach(item => document.querySelector(item).style.display = display);
+};
 
-document.querySelector(".modal-window__flag").addEventListener("click", () => {
-  const modalOverlay = document.querySelector(".modal-overlay");
-  const modalWindow = document.querySelector(".modal-window");
-  modalOverlay.style.display = "none";
-  modalWindow.style.display = "none";
-});
+document.querySelectorAll(".office__btn").forEach(btn =>
+  btn.addEventListener("click", () => toggleModalDisplay("block")));
+
+document.querySelector(".modal-window__flag").addEventListener("click", () => toggleModalDisplay("none"));
 
 
-// modal window 'placeholder'
+// modal window 'placeholder' правлю,чтобы всегда была +7
 const phoneInput = document.getElementById("phone");
 
 phoneInput.addEventListener("focus", () => {
@@ -133,7 +126,9 @@ phoneInput.addEventListener("keydown", (event) => {
   }
 });
 
-var swiper = new Swiper('.swiper-container', {
+
+// использую swiper.js
+const swiper = new Swiper('.swiper-container', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,

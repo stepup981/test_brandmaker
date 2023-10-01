@@ -12,7 +12,7 @@ body {
   padding: 0;
   font-weight: 400;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 22px;
   font-family: "AvenirNextCyr-Regular";
   color: var(--color-gray);
   max-width: 1920px;
@@ -22,18 +22,11 @@ body {
 
 .content {
   max-width: 1170px;
-  margin: auto;
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 .office__breadcrumbs {
-  font-weight: 450;
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-bottom: 32px;
   font-weight: 450;
   display: flex;
   justify-content: flex-start;
@@ -48,7 +41,8 @@ body {
   border-bottom: 1px solid var(--color-gray);
 }
 .office__about {
-  display: flex;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
   gap: 30px;
   position: relative;
 }
@@ -68,7 +62,7 @@ body {
   align-items: center;
   gap: 8px;
   background-color: white;
-  padding: 0px 7px;
+  padding: 0px 8px;
 }
 .office__info-circle {
   width: 8px;
@@ -77,11 +71,11 @@ body {
   border-radius: 50%;
 }
 .office__info-instok p {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: 5%;
   color: inherit;
-  line-height: 14.4px;
+  line-height: 14px;
   padding-bottom: 4px;
 }
 .office__first-image, .office__second-image, .office__third-image, .office__fourth-image {
@@ -97,12 +91,12 @@ body {
   bottom: 0;
 }
 .office__info-child {
-  padding: 2px 7px;
+  padding: 2px 8px;
   background-color: var(--color-yellow);
   border-radius: 50%;
   position: absolute;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 12px;
   cursor: pointer;
   position: absolute;
 }
@@ -153,7 +147,7 @@ body {
 }
 .office__info-price {
   color: var(--color-yellow);
-  font-weight: 750;
+  font-weight: 700;
 }
 .office__bag {
   position: relative;
@@ -192,9 +186,10 @@ body {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: "AvenirNextCyr-Bold";
   font-size: 16px;
-  font-weight: 700;
   white-space: nowrap;
+  color: inherit;
 }
 .office__btn:hover {
   background-color: rgb(198, 160, 10);
@@ -206,7 +201,7 @@ body {
 }
 .office__price-box {
   border: 1px solid rgba(65, 65, 64, 0.1);
-  padding: 11px;
+  padding: 12px;
 }
 .office__price-list {
   display: flex;
@@ -225,11 +220,11 @@ body {
   gap: 22px;
 }
 .office__price-nubmer {
-  padding: 2px 7px;
+  padding: 2px 8px;
   background-color: var(--color-yellow);
   border-radius: 50%;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 10px;
 }
 .office__price-money {
   font-weight: 700;
@@ -248,13 +243,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1px;
+  gap: 2px;
 }
 .office__counter-action :nth-child(1) {
   border-bottom: 1px solid rgba(65, 65, 64, 0.1);
 }
 .office__counter-btnup, .office__counter-btndown {
-  padding: 4px 7px;
+  padding: 4px 8px;
   cursor: pointer;
 }
 .office__counter-btnup:hover, .office__counter-btndown:hover {
@@ -277,7 +272,7 @@ body {
   display: flex;
   border: 1px solid rgba(252, 63, 29, 0.16);
   background-color: rgba(252, 63, 29, 0.04);
-  padding: 11px 14px;
+  padding: 12px 14px;
 }
 .office__notification-alternative p {
   line-height: 10px;
@@ -290,7 +285,7 @@ body {
   gap: 8px;
 }
 .office__quest img {
-  padding-bottom: 25px;
+  padding-bottom: 26px;
 }
 .office__link-phone {
   font-size: 16px;
@@ -340,7 +335,7 @@ body {
 }
 .modal-window__info h1 {
   font-size: 28px;
-  line-height: 1px;
+  line-height: 2px;
 }
 .modal-window__info p {
   font-size: 16px;
@@ -363,7 +358,7 @@ body {
   transform: translateY(-50%);
 }
 .modal-window__phone input {
-  padding: 15px 0px 15px 45px;
+  padding: 14px 0px 14px 44px;
   border: 1px solid rgba(65, 65, 64, 0.1);
   width: 120%;
 }
@@ -374,13 +369,14 @@ body {
 }
 .modal-window__btn {
   background-color: var(--color-yellow);
-  padding: 18px 79px;
+  padding: 18px 78px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 16px;
-  font-weight: 700;
+  font-family: "AvenirNextCyr-Bold";
   white-space: nowrap;
+  color: inherit;
 }
 .modal-window__btn:hover {
   background-color: rgb(198, 160, 10);
