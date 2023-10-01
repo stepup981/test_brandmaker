@@ -68,8 +68,8 @@ updateTotalPrice();
 
 // открывание модального окна для ввода номера телефона
 const toggleModalDisplay = (display) => {
-  const items = [".modal-overlay", ".modal-window"];
-  items.forEach(item => document.querySelector(item).style.display = display);
+  document.querySelector(".modal-overlay").style.display = display;
+  document.querySelector(".modal-window").style.display = display;
 };
 
 document.querySelectorAll(".office__btn").forEach(btn =>

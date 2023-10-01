@@ -83,7 +83,6 @@ body {
     font-weight: 700;
     letter-spacing: 5%;
     color: inherit;
-    line-height: 14px;
     padding-bottom: 4px;
   }
 
@@ -215,7 +214,7 @@ body {
 
   &__btn {
     background-color: var(--color-yellow);
-    padding: 18px 79px;
+    padding: 18px 78px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -264,7 +263,7 @@ body {
     background-color: var(--color-yellow);
     border-radius: 50%;
     font-weight: 700;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   &__price-money {
@@ -392,15 +391,18 @@ body {
   &__text {
     display: flex;
     flex-direction: column;
+    gap: 4px;
+    margin-bottom: 24px;
   }
 
   &__info h1 {
     font-size: 28px;
-    line-height: 2px;
+    margin: 0;
   }
 
   &__info p {
     font-size: 16px;
+    margin: 0;
   }
 
   &__info a {
@@ -426,7 +428,7 @@ body {
   &__phone input {
     padding: 14px 0px 14px 44px;
     border: 1px solid rgba(65, 65, 64, 0.1);
-    width: 120%;
+    width: 125%;
   }
 
   &__button {
