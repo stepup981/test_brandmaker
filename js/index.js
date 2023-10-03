@@ -7,36 +7,48 @@ document.addEventListener("DOMContentLoaded", () => {
       const popup = this.querySelector(".office__info-popup-hidden");
 
       if (!popup.style.display || popup.style.display === "none") {
-        return popup.style.display = "block";
+        return (popup.style.display = "block");
       }
       popup.style.display = "none";
     });
   });
 });
 
-
 // подсчитывание общей суммы в корзине
 const incrementBtns = document.querySelectorAll(".office__counter-btnup");
 const decrementBtns = document.querySelectorAll(".office__counter-btndown");
 const counters = document.querySelectorAll(".office__counter-value");
 const totalPriceElement = document.querySelector(".office__title-count");
-
 const prices = [27900, 14600, 10500, 55000, 43800, 13500];
 
 incrementBtns.forEach((btn, index) => {
   let count = 0;
-  counters[index].textContent = count;
+  counters[index].value = count;
 
   btn.addEventListener("click", () => {
     count++;
-    counters[index].textContent = count;
+    counters[index].value = count;
     updateTotalPrice();
   });
 
   decrementBtns[index].addEventListener("click", () => {
     if (count > 0) {
       count--;
-      counters[index].textContent = count;
+      counters[index].value = count;
+      updateTotalPrice();
+    }
+  });
+
+  counters[index].addEventListener("input", () => {
+    const inputValue = parseInt(counters[index].value);
+    if(counters[index].value === '') {
+      count = 0;
+      updateTotalPrice();
+      return;
+    }
+    if (!isNaN(inputValue) && inputValue >= 0) {
+      counters[index].value = inputValue.toString();
+      count = inputValue;
       updateTotalPrice();
     }
   });
@@ -50,7 +62,10 @@ const alternativeBlockElement = document.querySelector(
 function updateTotalPrice() {
   let totalPrice = 0;
   counters.forEach((counter, index) => {
-    totalPrice += parseInt(counter.textContent) * prices[index];
+    const count = parseInt(counter.value);
+    if (!isNaN(count) && count > 0) {
+      totalPrice += count * prices[index];
+    }
   });
 
   if (totalPrice === 0) {
@@ -64,19 +79,21 @@ function updateTotalPrice() {
   }
 }
 
-updateTotalPrice();
-
 // открывание модального окна для ввода номера телефона
 const toggleModalDisplay = (display) => {
   document.querySelector(".modal-overlay").style.display = display;
   document.querySelector(".modal-window").style.display = display;
 };
 
-document.querySelectorAll(".office__btn").forEach(btn =>
-  btn.addEventListener("click", () => toggleModalDisplay("block")));
+document
+  .querySelectorAll(".office__btn")
+  .forEach((btn) =>
+    btn.addEventListener("click", () => toggleModalDisplay("block"))
+  );
 
-document.querySelector(".modal-window__flag").addEventListener("click", () => toggleModalDisplay("none"));
-
+document
+  .querySelector(".modal-window__flag")
+  .addEventListener("click", () => toggleModalDisplay("none"));
 
 // modal window 'placeholder' правлю,чтобы всегда была +7
 const phoneInput = document.getElementById("phone");
@@ -126,11 +143,29 @@ phoneInput.addEventListener("keydown", (event) => {
   }
 });
 
+// добавлние закрытие модального оклна по клик на оверлей
+const modalOverlay = document.querySelector(".modal-overlay");
+const modalWindow = document.querySelector(".modal-window");
+const closeModal = () => {
+  modalOverlay.style.display = "none";
+  modalWindow.style.display = "none";
+};
+
+modalOverlay.addEventListener("click", closeModal);
 
 // использую swiper.js
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper(".swiper-container", {
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
     clickable: true,
   },
 });
+
+
+
+// Инициализируем слайдер с помощью библиотеки Swiper
+
+
+
+
+

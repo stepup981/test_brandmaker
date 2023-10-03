@@ -20,6 +20,16 @@ body {
   width: 100%;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .content {
   max-width: 1170px;
   width: 100%;
@@ -30,15 +40,29 @@ body {
   font-weight: 450;
   display: flex;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 26px;
   margin-bottom: 32px;
   overflow-x: auto;
   white-space: nowrap;
 }
-.office__breadcrumbs a {
+.office__breadcrumbs-link {
   color: inherit;
   text-decoration: none;
   border-bottom: 1px solid var(--color-gray);
+  position: relative;
+}
+.office__breadcrumbs-link::after {
+  content: "";
+  position: absolute;
+  border-top: 1px solid var(--color-gray);
+  border-right: 1px solid var(--color-gray);
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+  top: 50%;
+  right: -15px;
+  margin-top: -2.5px;
+  pointer-events: none;
 }
 .office__about {
   display: grid;
@@ -56,13 +80,13 @@ body {
   position: absolute;
   top: 1%;
   right: 2%;
-  bottom: 96.5%;
+  bottom: 97.5%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
   background-color: white;
-  padding: 0px 8px;
+  padding: 6px 12px;
 }
 .office__info-circle {
   width: 8px;
@@ -71,11 +95,11 @@ body {
   border-radius: 50%;
 }
 .office__info-instok p {
-  font-size: 22px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 5%;
   color: inherit;
-  padding-bottom: 4px;
+  padding-bottom: 2px;
 }
 .office__first-image, .office__second-image, .office__third-image, .office__fourth-image {
   position: relative;
@@ -90,12 +114,14 @@ body {
   bottom: 0;
 }
 .office__info-child {
-  padding: 2px 10px;
+  max-width: 21px;
+  max-height: 21px;
+  padding: 2px 9px;
   background-color: var(--color-yellow);
   border-radius: 50%;
   position: absolute;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 11px;
   cursor: pointer;
   position: absolute;
 }
@@ -131,16 +157,13 @@ body {
 }
 .office__info-popup {
   background-color: rgba(65, 65, 64, 0.85);
-  width: 124px;
-  height: 68px;
+  width: -moz-max-content;
+  width: max-content;
   line-height: 10px;
   text-align: left;
-  padding-left: 16px;
-  padding-top: 12px;
+  padding: 12px 23px 12px 16px;
   margin-top: 4px;
-  margin-right: 20px;
   position: absolute;
-  z-index: 300;
 }
 .office__info-name {
   color: white;
@@ -154,6 +177,7 @@ body {
 }
 .office__title {
   font-size: 32px;
+  font-family: "AvenirNextCyr-Bold";
 }
 .office__info {
   display: flex;
@@ -170,9 +194,23 @@ body {
   border-bottom: 1px solid var(--color-gray);
 }
 .office__subtitle {
-  display: flex;
-  gap: 18px;
   background-color: var(--color-lightGray);
+  padding: 14px 38px;
+  position: relative;
+  margin-left: 28px;
+}
+.office__subtitle::before {
+  content: "";
+  background-image: url(../assets/icon/bag.svg);
+  display: block;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: -24px;
+  top: 0;
+}
+.office__subtitle p {
+  margin: 0;
 }
 .office__subtitle img {
   padding-left: 10px;
@@ -182,7 +220,7 @@ body {
 }
 .office__btn {
   background-color: var(--color-yellow);
-  padding: 18px 78px;
+  padding: 18px 79px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -190,6 +228,9 @@ body {
   font-size: 16px;
   white-space: nowrap;
   color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .office__btn:hover {
   background-color: rgb(198, 160, 10);
@@ -199,20 +240,26 @@ body {
   flex-direction: column;
   position: relative;
 }
-.office__price-box {
+.office__price-list {
   border: 1px solid rgba(65, 65, 64, 0.1);
+}
+.office__price-box {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
   padding: 12px;
 }
-.office__price-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.office__price-box:nth-child(even) {
+  background-color: var(--color-lightGray);
 }
 .office__price-info {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
+}
+.office__price-name {
+  margin: 0;
 }
 .office__counter {
   display: flex;
@@ -229,21 +276,27 @@ body {
 .office__price-money {
   font-weight: 700;
 }
-.office__price-counter {
+.office__counter-input {
   display: flex;
+  justify-content: center;
   align-items: center;
   border: 1px solid rgba(65, 65, 64, 0.1);
 }
 .office__counter-value {
-  opacity: 0.6;
-  border-right: 1px solid rgba(65, 65, 64, 0.1);
-  padding: 2px 8px;
+  border: none;
+  width: 23px;
+  color: rgba(65, 65, 64, 0.6);
+  text-align: center;
+}
+.office__counter-value:focus {
+  outline: none;
+  box-shadow: none;
 }
 .office__counter-action {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  background-color: rgb(236, 236, 236);
 }
 .office__counter-action :nth-child(1) {
   border-bottom: 1px solid rgba(65, 65, 64, 0.1);
@@ -264,9 +317,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
-.office__office__title-count {
-  font-size: 32px;
+.office__title-count {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+.office__notification {
+  margin-right: 18px;
 }
 .office__notification-alternative {
   display: flex;
@@ -335,13 +394,15 @@ body {
   gap: 4px;
   margin-bottom: 24px;
 }
-.modal-window__info h1 {
+.modal-window__info h2 {
   font-size: 28px;
   margin: 0;
+  font-weight: 700;
 }
 .modal-window__info p {
   font-size: 16px;
   margin: 0;
+  font-weight: 400;
 }
 .modal-window__info a {
   font-size: 11px;
@@ -361,9 +422,8 @@ body {
   transform: translateY(-50%);
 }
 .modal-window__phone input {
-  padding: 14px 0px 14px 44px;
+  padding: 14px 92px 14px 44px;
   border: 1px solid rgba(65, 65, 64, 0.1);
-  width: 125%;
 }
 .modal-window__button {
   display: flex;
@@ -534,13 +594,23 @@ body {
     left: 85%;
   }
   .office__subtitle {
-    display: flex;
+    background-color: var(--color-lightGray);
+    padding: 6px 60px 6px 18px;
+    position: relative;
+    text-align: center;
   }
-  .office__subtitle img {
-    order: 2;
+  .office__subtitle::before {
+    display: none;
   }
-  .office__subtitle p {
-    order: 1;
+  .office__subtitle::after {
+    content: "";
+    background-image: url(../assets/icon/bag.svg);
+    display: block;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    right: 0;
+    top: -12px;
   }
   .office__price-info {
     gap: 8px;
