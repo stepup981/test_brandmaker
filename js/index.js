@@ -37,7 +37,6 @@ const prices = [27900, 14600, 10500, 55000, 43800, 13500];
 incrementBtns.forEach((btn, index) => {
   let count = 0;
   counters[index].value = count;
-  
 
   btn.addEventListener("click", () => {
     count++;
@@ -169,34 +168,26 @@ const closeModal = () => {
 modalOverlay.addEventListener("click", closeModal);
 
 // использую swiper.js
-
 let swiper;
 
 function initializeSwiper() {
   const screenWidth = window.innerWidth;
 
-  // Создаем экземпляр Swiper только если он еще не создан и ширина экрана < 768px
-  if (!swiper && screenWidth < 781) {
-    swiper = new Swiper('.swiper-container', {
+  if (!swiper && screenWidth <= 781) {
+    swiper = new Swiper(".swiper-container", {
       slidesPerView: 1,
-          spaceBetween: 10,
+      spaceBetween: 10,
       pagination: {
-        el: '.swiper-pagination',
-        clickable: true
+        el: ".swiper-pagination",
+        clickable: true,
       },
-     
     });
-  // Обрабатываем случай, если ширина экрана > 768px и Swiper уже был инициализирован
-  } else if (swiper && screenWidth >= 768) {
-    // Удаляем инициализацию Swiper
+  } else if (swiper && screenWidth > 781) {
     swiper.destroy(true, true);
-    // Обнуляем наш экземпляр Swiper
     swiper = null;
   }
 }
 
-// Инициализируем Swiper при загрузке страницы
 initializeSwiper();
 
-// Добавляем слушателя изменений размера окна
-window.addEventListener('resize', initializeSwiper);
+window.addEventListener("resize", initializeSwiper);
