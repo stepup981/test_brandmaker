@@ -65,8 +65,7 @@ input[type=number] {
   pointer-events: none;
 }
 .office__about {
-  display: grid;
-  grid-template-columns: 3fr auto;
+  display: flex;
   gap: 30px;
   position: relative;
 }
@@ -422,32 +421,72 @@ input[type=number] {
   width: auto !important;
 }
 
-.swiper-pagination {
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 50px;
-  position: absolute;
-  max-width: 82px;
-  max-height: 22px;
-  margin-left: 50%;
-  margin-bottom: 12px;
-}
-
-.swiper-pagination .swiper-pagination-bullet {
-  background-color: rgb(255, 255, 255);
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-}
-
-.swiper-pagination .swiper-pagination-bullet-active {
-  background-color: rgb(255, 255, 255);
-  width: 8px;
-  height: 8px;
-}
-
 @media (max-width: 1210px) {
   .office__info-popup-hidden.move-left .office__info-popup {
     right: 100%;
     transform: translateX(30%);
+  }
+}
+@media (max-width: 768px) {
+  .office__about {
+    display: flex;
+    flex-direction: column;
+  }
+  .office__subtitle {
+    text-align: center;
+    background-color: red;
+    margin-left: 0px;
+  }
+  .office__subtitle::before {
+    display: none;
+  }
+  .office__subtitle::after {
+    content: "";
+    background-image: url(../assets/icon/bag.svg);
+    display: block;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    right: 15%;
+    top: -10px;
+  }
+  .swiper-container {
+    position: relative;
+  }
+  .swiper-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  .swiper-pagination {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50px;
+    position: absolute;
+    max-width: 82px;
+    max-height: 22px;
+    margin-left: 45%;
+    margin-bottom: 12px;
+  }
+  .swiper-pagination .swiper-pagination-bullet {
+    background-color: rgb(255, 255, 255);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: rgb(255, 255, 255);
+    width: 8px;
+    height: 8px;
+  }
+}
+@media (max-width: 500px) {
+  .office__subtitle::after {
+    content: "";
+    background-image: url(../assets/icon/bag.svg);
+    display: block;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    right: 2%;
+    top: -10px;
   }
 }/*# sourceMappingURL=style.css.map */

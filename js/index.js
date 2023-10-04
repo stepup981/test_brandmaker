@@ -168,3 +168,40 @@ modalOverlay.addEventListener("click", closeModal);
 
 // использую swiper.js
 
+let swiper;
+
+function initializeSwiper() {
+  const screenWidth = window.innerWidth;
+
+  // Создаем экземпляр Swiper только если он еще не создан и ширина экрана < 768px
+  if (!swiper && screenWidth < 768) {
+    swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        }
+      }
+    });
+  // Обрабатываем случай, если ширина экрана > 768px и Swiper уже был инициализирован
+  } else if (swiper && screenWidth >= 768) {
+    // Удаляем инициализацию Swiper
+    swiper.destroy(true, true);
+    // Обнуляем наш экземпляр Swiper
+    swiper = null;
+  }
+}
+
+// Инициализируем Swiper при загрузке страницы
+initializeSwiper();
+
+// Добавляем слушателя изменений размера окна
+window.addEventListener('resize', initializeSwiper);
