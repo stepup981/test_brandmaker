@@ -497,7 +497,8 @@ input[type="number"] {
   
 }
 
-@media (max-width: 768px) {
+@media (max-width: 781px) {
+  
   .office__about {
     display: flex;
     flex-direction: column;
@@ -523,8 +524,9 @@ input[type="number"] {
       top: -10px;
     }
   }
-  
-
+  .swiper-container {
+    display: flex;
+  }
   .swiper-container {
     position: relative;
   }
@@ -533,9 +535,6 @@ input[type="number"] {
     display: flex;
     flex-direction: row;
   }
-
-  
-
 
 
   .swiper-pagination {

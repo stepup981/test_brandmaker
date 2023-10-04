@@ -37,6 +37,7 @@ const prices = [27900, 14600, 10500, 55000, 43800, 13500];
 incrementBtns.forEach((btn, index) => {
   let count = 0;
   counters[index].value = count;
+  
 
   btn.addEventListener("click", () => {
     count++;
@@ -91,6 +92,7 @@ function updateTotalPrice() {
     totalPriceElement.textContent = `${totalPrice.toLocaleString("ru-RU")} руб`;
   }
 }
+updateTotalPrice();
 
 // открывание модального окна для ввода номера телефона
 const toggleModalDisplay = (display) => {
@@ -174,22 +176,15 @@ function initializeSwiper() {
   const screenWidth = window.innerWidth;
 
   // Создаем экземпляр Swiper только если он еще не создан и ширина экрана < 768px
-  if (!swiper && screenWidth < 768) {
+  if (!swiper && screenWidth < 781) {
     swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+          spaceBetween: 10,
       pagination: {
         el: '.swiper-pagination',
         clickable: true
       },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 10
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20
-        }
-      }
+     
     });
   // Обрабатываем случай, если ширина экрана > 768px и Swiper уже был инициализирован
   } else if (swiper && screenWidth >= 768) {
