@@ -23,90 +23,13 @@
         </div>
 
         <div class="office__about">
-          <div class="office__images">
-            <div class="office__first-image">
-              <img src="./assets/picture/first.png" alt="firstimg" />
-            </div>
+          
 
-            <div class="office__info-instok">
-              <div class="office__info-circle"></div>
-              <p>в наличии</p>
-            </div>
-            <div class="office__info-click">
-              <div class="office__info-child">
-                1
-                <div class="office__info-popup-hidden">
-                  <div class="office__info-popup">
-                    <p class="office__info-name">Стол руководителя</p>
-                    <p class="office__info-price">от 27 900 руб</p>
-                  </div>
-                </div>
-              </div>
-              <div class="office__info-child">
-                2
-                <div class="office__info-popup-hidden">
-                  <div class="office__info-popup">
-                    <p class="office__info-name">Брифинг-приставка</p>
-                    <p class="office__info-price">от 14 600 руб</p>
-                  </div>
-                </div>
-              </div>
-              <div class="office__info-child">
-                3
-                <div class="office__info-popup-hidden">
-                  <div class="office__info-popup">
-                    <p class="office__info-name">Тумба с ящиками</p>
-                    <p class="office__info-price">от 10 500 руб</p>
-                  </div>
-                </div>
-              </div>
-              <div class="office__info-child">
-                4
-                <div class="office__info-popup-hidden">
-                  <div class="office__info-popup">
-                    <p class="office__info-name">Шкаф для одежды</p>
-                    <p class="office__info-price">от 55 000 руб</p>
-                  </div>
-                </div>
-              </div>
-              <div class="office__info-child">
-                5
-                <div class="office__info-popup-hidden">
-                  <div class="office__info-popup">
-                    <p class="office__info-name">Кресло руководителя</p>
-                    <p class="office__info-price">от 43 800 руб</p>
-                  </div>
-                </div>
-              </div>
-              <div class="office__info-child">
-                6
-                <div class="office__info-popup-hidden move-left">
-                  <div class="office__info-popup">
-                    <p class="office__info-name">Кресло посетителя</p>
-                    <p class="office__info-price">от 13 500 руб</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="office__second-image">
-              <img src="./assets/picture/second.png" alt="secondimg" />
-            </div>
-            <div class="office__third-image">
-              <img src="./assets/picture/third.png" alt="thirdimg" />
-            </div>
-            <div class="office__fourth-image">
-              <img src="./assets/picture/fourth.png" alt="fourthimg" />
-            </div>
-          </div>
-
-          <div class="swiper-container">
+          <div class="swiper-container" >
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img
-                  class="office__first-image"
-                  src="./assets/picture/first.png"
-                  alt="firstimg"
-                />
+                <!-- содержимое первого изображения -->
+                <img src="./assets/picture/first.png" alt="firstimg" />
                 <div class="office__info-instok">
                   <div class="office__info-circle"></div>
                   <p>в наличии</p>
@@ -169,247 +92,246 @@
                 </div>
               </div>
               <div class="swiper-slide">
-                <img
-                  class="office__second-image"
-                  src="./assets/picture/second.png"
-                  alt="secondimg"
-                />
+                <!-- содержимое второго изображения -->
+                <img src="./assets/picture/second.png" alt="secondimg" />
               </div>
               <div class="swiper-slide">
-                <img
-                  class="office__third-image"
-                  src="./assets/picture/third.png"
-                  alt="thirdimg"
-                />
+                <!-- содержимое третьего изображения -->
+                <img src="./assets/picture/third.png" alt="thirdimg" />
               </div>
               <div class="swiper-slide">
-                <img
-                  class="office__fourth-image"
-                  src="./assets/picture/fourth.png"
-                  alt="thirdimg"
-                />
+                <!-- содержимое четвертого изображения -->
+                <img src="./assets/picture/fourth.png" alt="fourthimg" />
+              </div>
+              </div>
+              
+              <div class="swiper-pagination"></div>
+            </div>
+
+            
+
+            <div class="office__bag">
+              <h1 class="office__title">GAMMA DIRECT</h1>
+              <div class="office__info">
+                <div class="office__subtitle">
+                  <p><span>Доставка и монтаж </span>Завтра после 12:00</p>
+                </div>
+                <button class="office__btn">Заказать бесплатный эскиз</button>
+                <div class="office__price">
+                  <div class="office__price-list">
+                    <div class="office__price-box">
+                      <div class="office__price-info">
+                        <div class="office__price-nubmer">1</div>
+                        <p class="office__price-name">Стол руководителя</p>
+                      </div>
+                      <div class="office__counter">
+                        <div class="office__price-money">от 27 900 руб</div>
+                        <div class="office__counter-input">
+                          <input
+                            type="number"
+                            value="0"
+                            class="office__counter-value"
+                            min="0"
+                          />
+                          <div class="office__counter-action">
+                            <img
+                              src="./assets/icon/arrowup.svg"
+                              class="office__counter-btnup"
+                              alt="arrowup"
+                            />
+                            <img
+                              src="./assets/icon/arrowdown.svg"
+                              class="office__counter-btndown"
+                              alt="arrowdown"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="office__price-box">
+                      <div class="office__price-info">
+                        <div class="office__price-nubmer">2</div>
+                        <p class="office__price-name">Брифинг-приставка</p>
+                      </div>
+                      <div class="office__counter">
+                        <div class="office__price-money">от 14 600 руб</div>
+                        <div class="office__counter-input">
+                          <input
+                            type="number"
+                            value="0"
+                            class="office__counter-value"
+                            min="0"
+                          />
+                          <div class="office__counter-action">
+                            <img
+                              src="./assets/icon/arrowup.svg"
+                              class="office__counter-btnup"
+                              alt="arrowup"
+                            />
+                            <img
+                              src="./assets/icon/arrowdown.svg"
+                              class="office__counter-btndown"
+                              alt="arrowdown"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="office__price-box">
+                      <div class="office__price-info">
+                        <div class="office__price-nubmer">3</div>
+                        <p class="office__price-name">Тумба с ящиками</p>
+                      </div>
+                      <div class="office__counter">
+                        <div class="office__price-money">от 10 500 руб</div>
+                        <div class="office__counter-input">
+                          <input
+                            type="number"
+                            value="0"
+                            class="office__counter-value"
+                            min="0"
+                          />
+                          <div class="office__counter-action">
+                            <img
+                              src="./assets/icon/arrowup.svg"
+                              class="office__counter-btnup"
+                              alt="arrowup"
+                            />
+                            <img
+                              src="./assets/icon/arrowdown.svg"
+                              class="office__counter-btndown"
+                              alt="arrowdown"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="office__price-box">
+                      <div class="office__price-info">
+                        <div class="office__price-nubmer">4</div>
+                        <p class="office__price-name">Шкаф для одежды</p>
+                      </div>
+                      <div class="office__counter">
+                        <div class="office__price-money">от 55 000 руб</div>
+                        <div class="office__counter-input">
+                          <input
+                            type="number"
+                            value="0"
+                            class="office__counter-value"
+                            min="0"
+                          />
+                          <div class="office__counter-action">
+                            <img
+                              src="./assets/icon/arrowup.svg"
+                              class="office__counter-btnup"
+                              alt="arrowup"
+                            />
+                            <img
+                              src="./assets/icon/arrowdown.svg"
+                              class="office__counter-btndown"
+                              alt="arrowdown"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="office__price-box">
+                      <div class="office__price-info">
+                        <div class="office__price-nubmer">5</div>
+                        <p class="office__price-name">Кресло руководителя</p>
+                      </div>
+                      <div class="office__counter">
+                        <div class="office__price-money">от 43 800 руб</div>
+                        <div class="office__counter-input">
+                          <input
+                            type="number"
+                            value="0"
+                            class="office__counter-value"
+                            min="0"
+                          />
+                          <div class="office__counter-action">
+                            <img
+                              src="./assets/icon/arrowup.svg"
+                              class="office__counter-btnup"
+                              alt="arrowup"
+                            />
+                            <img
+                              src="./assets/icon/arrowdown.svg"
+                              class="office__counter-btndown"
+                              alt="arrowdown"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="office__price-box">
+                      <div class="office__price-info">
+                        <div class="office__price-nubmer">6</div>
+                        <p class="office__price-name">Кресло посетителя</p>
+                      </div>
+                      <div class="office__counter">
+                        <div class="office__price-money">от 13 500 руб</div>
+                        <div class="office__counter-input">
+                          <input
+                            type="number"
+                            value="0"
+                            class="office__counter-value"
+                            min="0"
+                          />
+                          <div class="office__counter-action">
+                            <img
+                              src="./assets/icon/arrowup.svg"
+                              class="office__counter-btnup"
+                              alt="arrowup"
+                            />
+                            <img
+                              src="./assets/icon/arrowdown.svg"
+                              class="office__counter-btndown"
+                              alt="arrowdown"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="office__price-onepiece">*Цены указаны за 1 шт</p>
+                </div>
+              </div>
+              <div class="office__info">
+                <div class="office__sum-price">
+                  <div class="office__price-complect">
+                    <p>Цена за комплект от</p>
+                    <p class="office__title-count"></p>
+                  </div>
+                  <div class="office__notification">
+                    <a href=""
+                      >Уведомить, если цена<br />
+                      будет снижена</a
+                    >
+                  </div>
+                  <div
+                    class="office__notification-alternative"
+                    style="display: none"
+                  >
+                    <p>Чтобы увидеть цену, выберите нужные позиции в таблице</p>
+                    <img src="./assets/icon/cornerup.svg" alt="" />
+                  </div>
+                </div>
+                <button class="office__btn">Отправить заявку</button>
+              </div>
+              <div class="office__quest">
+                <img src="./assets/icon/quest.svg" alt="" />
+                <div class="office__link-phone">
+                  <p>Возникли вопросы? Звоните!</p>
+                  <a href="tel:+79385000541">+7 (938) 5000-541</a>
+                </div>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
           </div>
 
-          <div class="office__bag">
-            <h1 class="office__title">GAMMA DIRECT</h1>
-            <div class="office__info">
-              <div class="office__subtitle">
-                <p><span>Доставка и монтаж </span>Завтра после 12:00</p>
-              </div>
-              <button class="office__btn">Заказать бесплатный эскиз</button>
-              <div class="office__price">
-                <div class="office__price-list">
-                  <div class="office__price-box">
-                    <div class="office__price-info">
-                      <div class="office__price-nubmer">1</div>
-                      <p class="office__price-name">Стол руководителя</p>
-                    </div>
-                    <div class="office__counter">
-                      <div class="office__price-money">от 27 900 руб</div>
-                      <div class="office__counter-input">
-                        <input
-                          type="number"
-                          value="0"
-                          class="office__counter-value"
-                          min="0"
-                        />
-                        <div class="office__counter-action">
-                          <img
-                            src="./assets/icon/arrowup.svg"
-                            class="office__counter-btnup"
-                            alt="arrowup"
-                          />
-                          <img
-                            src="./assets/icon/arrowdown.svg"
-                            class="office__counter-btndown"
-                            alt="arrowdown"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="office__price-box">
-                    <div class="office__price-info">
-                      <div class="office__price-nubmer">2</div>
-                      <p class="office__price-name">Брифинг-приставка</p>
-                    </div>
-                    <div class="office__counter">
-                      <div class="office__price-money">от 14 600 руб</div>
-                      <div class="office__counter-input">
-                        <input
-                          type="number"
-                          value="0"
-                          class="office__counter-value"
-                          min="0"
-                        />
-                        <div class="office__counter-action">
-                          <img
-                            src="./assets/icon/arrowup.svg"
-                            class="office__counter-btnup"
-                            alt="arrowup"
-                          />
-                          <img
-                            src="./assets/icon/arrowdown.svg"
-                            class="office__counter-btndown"
-                            alt="arrowdown"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="office__price-box">
-                    <div class="office__price-info">
-                      <div class="office__price-nubmer">3</div>
-                      <p class="office__price-name">Тумба с ящиками</p>
-                    </div>
-                    <div class="office__counter">
-                      <div class="office__price-money">от 10 500 руб</div>
-                      <div class="office__counter-input">
-                        <input
-                          type="number"
-                          value="0"
-                          class="office__counter-value"
-                          min="0"
-                        />
-                        <div class="office__counter-action">
-                          <img
-                            src="./assets/icon/arrowup.svg"
-                            class="office__counter-btnup"
-                            alt="arrowup"
-                          />
-                          <img
-                            src="./assets/icon/arrowdown.svg"
-                            class="office__counter-btndown"
-                            alt="arrowdown"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="office__price-box">
-                    <div class="office__price-info">
-                      <div class="office__price-nubmer">4</div>
-                      <p class="office__price-name">Шкаф для одежды</p>
-                    </div>
-                    <div class="office__counter">
-                      <div class="office__price-money">от 55 000 руб</div>
-                      <div class="office__counter-input">
-                        <input
-                          type="number"
-                          value="0"
-                          class="office__counter-value"
-                          min="0"
-                        />
-                        <div class="office__counter-action">
-                          <img
-                            src="./assets/icon/arrowup.svg"
-                            class="office__counter-btnup"
-                            alt="arrowup"
-                          />
-                          <img
-                            src="./assets/icon/arrowdown.svg"
-                            class="office__counter-btndown"
-                            alt="arrowdown"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="office__price-box">
-                    <div class="office__price-info">
-                      <div class="office__price-nubmer">5</div>
-                      <p class="office__price-name">Кресло руководителя</p>
-                    </div>
-                    <div class="office__counter">
-                      <div class="office__price-money">от 43 800 руб</div>
-                      <div class="office__counter-input">
-                        <input
-                          type="number"
-                          value="0"
-                          class="office__counter-value"
-                          min="0"
-                        />
-                        <div class="office__counter-action">
-                          <img
-                            src="./assets/icon/arrowup.svg"
-                            class="office__counter-btnup"
-                            alt="arrowup"
-                          />
-                          <img
-                            src="./assets/icon/arrowdown.svg"
-                            class="office__counter-btndown"
-                            alt="arrowdown"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="office__price-box">
-                    <div class="office__price-info">
-                      <div class="office__price-nubmer">6</div>
-                      <p class="office__price-name">Кресло посетителя</p>
-                    </div>
-                    <div class="office__counter">
-                      <div class="office__price-money">от 13 500 руб</div>
-                      <div class="office__counter-input">
-                        <input
-                          type="number"
-                          value="0"
-                          class="office__counter-value"
-                          min="0"
-                        />
-                        <div class="office__counter-action">
-                          <img
-                            src="./assets/icon/arrowup.svg"
-                            class="office__counter-btnup"
-                            alt="arrowup"
-                          />
-                          <img
-                            src="./assets/icon/arrowdown.svg"
-                            class="office__counter-btndown"
-                            alt="arrowdown"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p class="office__price-onepiece">*Цены указаны за 1 шт</p>
-              </div>
-            </div>
-            <div class="office__info">
-              <div class="office__sum-price">
-                <div class="office__price-complect">
-                  <p>Цена за комплект от</p>
-                  <p class="office__title-count"></p>
-                </div>
-                <div class="office__notification">
-                  <a href=""
-                    >Уведомить, если цена<br />
-                    будет снижена</a
-                  >
-                </div>
-                <div
-                  class="office__notification-alternative"
-                  style="display: none"
-                >
-                  <p>Чтобы увидеть цену, выберите нужные позиции в таблице</p>
-                  <img src="./assets/icon/cornerup.svg" alt="" />
-                </div>
-              </div>
-              <button class="office__btn">Отправить заявку</button>
-            </div>
-            <div class="office__quest">
-              <img src="./assets/icon/quest.svg" alt="" />
-              <div class="office__link-phone">
-                <p>Возникли вопросы? Звоните!</p>
-                <a href="tel:+79385000541">+7 (938) 5000-541</a>
-              </div>
-            </div>
-          </div>
+
+
+         
         </div>
       </div>
 

@@ -23,12 +23,12 @@ body {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type=number] {
-    -moz-appearance: textfield;
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .content {
@@ -60,34 +60,27 @@ input[type=number] {
     position: absolute;
     border-top: 1px solid var(--color-gray);
     border-right: 1px solid var(--color-gray);
-    width: 5px; 
-    height: 5px; 
+    width: 5px;
+    height: 5px;
     transform: rotate(45deg);
     top: 50%;
     right: -15px;
     margin-top: -2.5px;
-    pointer-events: none; 
-}
+    pointer-events: none;
+  }
 
   &__about {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr auto;
     gap: 30px;
-    position: relative;
-  }
-
-  &__images {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
     position: relative;
   }
 
   &__info-instok {
     position: absolute;
-    top: 1%;
+    top: 2%;
     right: 2%;
-    bottom: 97.5%;
+    bottom: 93%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -109,14 +102,6 @@ input[type=number] {
     letter-spacing: 5%;
     color: inherit;
     padding-bottom: 2px;
-  }
-
-  &__first-image,
-  &__second-image,
-  &__third-image,
-  &__fourth-image {
-    position: relative;
-    width: 100%;
   }
 
   &__info-click {
@@ -145,36 +130,6 @@ input[type=number] {
     }
   }
 
-  &__info-child:nth-child(1) {
-    top: 11%;
-    left: 28%;
-  }
-
-  &__info-child:nth-child(2) {
-    top: 13%;
-    left: 65%;
-  }
-
-  &__info-child:nth-child(3) {
-    top: 8%;
-    left: 32%;
-  }
-
-  &__info-child:nth-child(4) {
-    top: 0.5%;
-    left: 14%;
-  }
-
-  &__info-child:nth-child(5) {
-    top: 7%;
-    left: 17%;
-  }
-
-  &__info-child:nth-child(6) {
-    top: 10%;
-    left: 86%;
-  }
-
   &__info-popup-hidden {
     display: none;
   }
@@ -187,11 +142,11 @@ input[type=number] {
     padding: 12px 23px 12px 16px;
     margin-top: 4px;
     position: absolute;
+    z-index: 150;
   }
 
   &__info-name {
     color: white;
-    
   }
 
   &__info-price {
@@ -260,7 +215,7 @@ input[type=number] {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-family: "AvenirNextCyr-Bold"; 
+    font-family: "AvenirNextCyr-Bold";
     font-size: 16px;
     white-space: nowrap;
     color: inherit;
@@ -305,7 +260,6 @@ input[type=number] {
     margin: 0;
   }
 
-
   &__counter {
     display: flex;
     align-items: center;
@@ -339,7 +293,7 @@ input[type=number] {
 
     &:focus {
       outline: none;
-      box-shadow: none; 
+      box-shadow: none;
     }
   }
 
@@ -372,7 +326,7 @@ input[type=number] {
 
   &__sum-price {
     display: flex;
-    justify-content: space-between;;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
   }
@@ -523,59 +477,14 @@ input[type=number] {
   }
 }
 
-.swiper-container {
-  display: none;
-  position: relative;
-  overflow: hidden;
-}
-
 .swiper-wrapper {
-  position: relative;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .swiper-slide {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  position: relative;
-}
-
-
-.swiper-slide .office__info-instok {
-  top: 4%;
-  right: 2%;
-  bottom: 86%;
-}
-
-.swiper-slide .office__info-child:nth-child(1) {
-  top: 46%;
-  left: 28%;
-}
-
-.swiper-slide .office__info-child:nth-child(2) {
-  top: 54%;
-  left: 65%;
-}
-
-.swiper-slide .office__info-child:nth-child(3) {
-  top: 34%;
-  left: 32%;
-}
-
-.swiper-slide .office__info-child:nth-child(4) {
-  top: 2%;
-  left: 14%;
-}
-
-.swiper-slide .office__info-child:nth-child(5) {
-  top: 28%;
-  left: 17%;
-}
-
-.swiper-slide .office__info-child:nth-child(6) {
-  top: 40%;
-  left: 86%;
+  height: auto !important;
+  width: auto !important;
 }
 
 .swiper-pagination {
@@ -602,134 +511,10 @@ input[type=number] {
 }
 
 @media (max-width: 1210px) {
-
-  .swiper-container {
-    display: block;
-  }
-
   .office__info-popup-hidden.move-left .office__info-popup {
     right: 100%;
     transform: translateX(30%);
   }
-
-  .office {
-    &__about {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &__breadcrumbs {
-      padding-left: 20px;
-    }
-
-    &__images {
-      display: none;
-    }
-
-    &__title {
-      padding-left: 20px;
-    }
-
-    &__subtitle {
-      margin: 0px 20px;
-    }
-
-    &__btn {
-      margin: 0px 20px;
-    }
-
-    &__price-info {
-      gap: 38px;
-    }
-
-    &__counter {
-      gap: 38px;
-    }
-
-    &__price-onepiece {
-      padding-right: 20px;
-    }
-
-    &__sum-price {
-      margin: 0px 20px;
-    }
-
-    &__quest {
-      margin-left: 20px;
-    }
-  }
 }
-
-
-@media (max-width: 600px) {
-  .swiper-pagination {
-    margin-left: 40%;
-  }
-
-  .swiper-slide .office__info-child:nth-child(1) {
-    top: 44%;
-    left: 28%;
-  }
-  
-  .swiper-slide .office__info-child:nth-child(2) {
-    top: 51%;
-    left: 65%;
-  }
-  
-  .swiper-slide .office__info-child:nth-child(3) {
-    top: 30%;
-    left: 32%;
-  }
-  
-  .swiper-slide .office__info-child:nth-child(4) {
-    top: 1%;
-    left: 13%;
-  }
-  
-  .swiper-slide .office__info-child:nth-child(5) {
-    top: 27%;
-    left: 16%;
-  }
-  
-  .swiper-slide .office__info-child:nth-child(6) {
-    top: 40%;
-    left: 85%;
-  }
-
-  .office {
-    &__subtitle {
-      background-color: var(--color-lightGray);
-    padding: 6px 60px 6px 18px;
-    position: relative;
-    text-align: center;
-
-    &::before {
-      display: none;
-    }
-
-    &::after {
-      content: "";
-      background-image: url(../assets/icon/bag.svg);
-      display: block;
-      width: 48px;
-      height: 48px;
-      position: absolute;
-      right: 0;
-      top: -12px;
-    }
-    }
-
-
-    &__price-info {
-      gap: 8px;
-    }
-
-    &__counter {
-      gap: 22px;
-    }
-  }
-}
-
-
 
 

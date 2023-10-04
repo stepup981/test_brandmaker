@@ -1,3 +1,16 @@
+// имитируем запрос с бэка на координаты точек на 1 картинке
+let coord = document.getElementsByClassName("office__info-child");
+
+fetch("https://651cf07044e393af2d58eb7f.mockapi.io/Coord")
+  .then((response) => response.json())
+  .then((data) => {
+    for (let i = 0; i < data.length; i++) {
+      coord[i].style.top = data[i].top;
+      coord[i].style.left = data[i].left;
+    }
+  })
+  .catch((error) => console.error("Ошибка:", error));
+
 // всплывающие окна на картинке с информацией о цене
 document.addEventListener("DOMContentLoaded", () => {
   const infoChildren = document.querySelectorAll(".office__info-child");
@@ -41,7 +54,7 @@ incrementBtns.forEach((btn, index) => {
 
   counters[index].addEventListener("input", () => {
     const inputValue = parseInt(counters[index].value);
-    if(counters[index].value === '') {
+    if (counters[index].value === "") {
       count = 0;
       updateTotalPrice();
       return;
@@ -154,18 +167,4 @@ const closeModal = () => {
 modalOverlay.addEventListener("click", closeModal);
 
 // использую swiper.js
-const swiper = new Swiper(".swiper-container", {
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
-
-
-
-// Инициализируем слайдер с помощью библиотеки Swiper
-
-
-
-
 

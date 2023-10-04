@@ -66,21 +66,15 @@ input[type=number] {
 }
 .office__about {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr auto;
   gap: 30px;
-  position: relative;
-}
-.office__images {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
   position: relative;
 }
 .office__info-instok {
   position: absolute;
-  top: 1%;
+  top: 2%;
   right: 2%;
-  bottom: 97.5%;
+  bottom: 93%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -100,10 +94,6 @@ input[type=number] {
   letter-spacing: 5%;
   color: inherit;
   padding-bottom: 2px;
-}
-.office__first-image, .office__second-image, .office__third-image, .office__fourth-image {
-  position: relative;
-  width: 100%;
 }
 .office__info-click {
   text-align: center;
@@ -128,30 +118,6 @@ input[type=number] {
 .office__info-child:hover {
   background-color: rgb(198, 160, 10);
 }
-.office__info-child:nth-child(1) {
-  top: 11%;
-  left: 28%;
-}
-.office__info-child:nth-child(2) {
-  top: 13%;
-  left: 65%;
-}
-.office__info-child:nth-child(3) {
-  top: 8%;
-  left: 32%;
-}
-.office__info-child:nth-child(4) {
-  top: 0.5%;
-  left: 14%;
-}
-.office__info-child:nth-child(5) {
-  top: 7%;
-  left: 17%;
-}
-.office__info-child:nth-child(6) {
-  top: 10%;
-  left: 86%;
-}
 .office__info-popup-hidden {
   display: none;
 }
@@ -164,6 +130,7 @@ input[type=number] {
   padding: 12px 23px 12px 16px;
   margin-top: 4px;
   position: absolute;
+  z-index: 150;
 }
 .office__info-name {
   color: white;
@@ -445,58 +412,14 @@ input[type=number] {
   background-color: rgb(198, 160, 10);
 }
 
-.swiper-container {
-  display: none;
-  position: relative;
-  overflow: hidden;
-}
-
 .swiper-wrapper {
-  position: relative;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .swiper-slide {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  position: relative;
-}
-
-.swiper-slide .office__info-instok {
-  top: 4%;
-  right: 2%;
-  bottom: 86%;
-}
-
-.swiper-slide .office__info-child:nth-child(1) {
-  top: 46%;
-  left: 28%;
-}
-
-.swiper-slide .office__info-child:nth-child(2) {
-  top: 54%;
-  left: 65%;
-}
-
-.swiper-slide .office__info-child:nth-child(3) {
-  top: 34%;
-  left: 32%;
-}
-
-.swiper-slide .office__info-child:nth-child(4) {
-  top: 2%;
-  left: 14%;
-}
-
-.swiper-slide .office__info-child:nth-child(5) {
-  top: 28%;
-  left: 17%;
-}
-
-.swiper-slide .office__info-child:nth-child(6) {
-  top: 40%;
-  left: 86%;
+  height: auto !important;
+  width: auto !important;
 }
 
 .swiper-pagination {
@@ -523,99 +446,8 @@ input[type=number] {
 }
 
 @media (max-width: 1210px) {
-  .swiper-container {
-    display: block;
-  }
   .office__info-popup-hidden.move-left .office__info-popup {
     right: 100%;
     transform: translateX(30%);
-  }
-  .office__about {
-    display: flex;
-    flex-direction: column;
-  }
-  .office__breadcrumbs {
-    padding-left: 20px;
-  }
-  .office__images {
-    display: none;
-  }
-  .office__title {
-    padding-left: 20px;
-  }
-  .office__subtitle {
-    margin: 0px 20px;
-  }
-  .office__btn {
-    margin: 0px 20px;
-  }
-  .office__price-info {
-    gap: 38px;
-  }
-  .office__counter {
-    gap: 38px;
-  }
-  .office__price-onepiece {
-    padding-right: 20px;
-  }
-  .office__sum-price {
-    margin: 0px 20px;
-  }
-  .office__quest {
-    margin-left: 20px;
-  }
-}
-@media (max-width: 600px) {
-  .swiper-pagination {
-    margin-left: 40%;
-  }
-  .swiper-slide .office__info-child:nth-child(1) {
-    top: 44%;
-    left: 28%;
-  }
-  .swiper-slide .office__info-child:nth-child(2) {
-    top: 51%;
-    left: 65%;
-  }
-  .swiper-slide .office__info-child:nth-child(3) {
-    top: 30%;
-    left: 32%;
-  }
-  .swiper-slide .office__info-child:nth-child(4) {
-    top: 1%;
-    left: 13%;
-  }
-  .swiper-slide .office__info-child:nth-child(5) {
-    top: 27%;
-    left: 16%;
-  }
-  .swiper-slide .office__info-child:nth-child(6) {
-    top: 40%;
-    left: 85%;
-  }
-  .office__subtitle {
-    background-color: var(--color-lightGray);
-    padding: 6px 60px 6px 18px;
-    position: relative;
-    text-align: center;
-  }
-  .office__subtitle::before {
-    display: none;
-  }
-  .office__subtitle::after {
-    content: "";
-    background-image: url(../assets/icon/bag.svg);
-    display: block;
-    width: 48px;
-    height: 48px;
-    position: absolute;
-    right: 0;
-    top: -12px;
-  }
-  .office__price-info {
-    gap: 8px;
-  }
-  .office__counter {
-    gap: 22px;
   }
 }/*# sourceMappingURL=style.css.map */
