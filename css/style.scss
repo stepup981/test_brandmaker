@@ -398,7 +398,7 @@ input[type="number"] {
   display: none;
   z-index: 150;
 
-  &__flag {
+  &__close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -450,14 +450,10 @@ input[type="number"] {
 
   &__phone input {
     padding: 14px 92px 14px 44px;
-    border: 1px solid rgba(65, 65, 64, 0.1);
+    border: 1px solid rgba(65, 65, 64, 0.10);
+    width: 165px;
   }
 
-  &__button {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
 
   &__btn {
     background-color: var(--color-yellow);
@@ -469,6 +465,7 @@ input[type="number"] {
     font-family: "AvenirNextCyr-Bold";
     white-space: nowrap;
     color: inherit;
+    margin-bottom: 18px;
 
     &:hover {
       background-color: rgb(198, 160, 10);
@@ -535,6 +532,9 @@ input[type="number"] {
         right: 15%;
         top: -10px;
       }
+    }
+    &__subtitle span {
+      margin-right: 14px;
     }
 
     &__price-onepiece {

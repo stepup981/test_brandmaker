@@ -1,15 +1,32 @@
 // имитируем запрос с бэка на координаты точек на 1 картинке
 let coord = document.getElementsByClassName("office__info-child");
 
-fetch("https://651cf07044e393af2d58eb7f.mockapi.io/Coord")
-  .then((response) => response.json())
-  .then((data) => {
-    for (let i = 0; i < data.length; i++) {
-      coord[i].style.top = data[i].top;
-      coord[i].style.left = data[i].left;
-    }
-  })
-  .catch((error) => console.error("Ошибка:", error));
+// Проверка наличия куки
+if (document.cookie.includes("cookieCoord")) {
+  // Чтение значения куки
+  let cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)cookieCoord\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+  // Использование значения куки для установки стилей
+  let data = JSON.parse(cookieValue);
+  for (let i = 0; i < data.length; i++) {
+    coord[i].style.top = data[i].top;
+    coord[i].style.left = data[i].left;
+  }
+} else {
+  // Запрос данных через API и установка стилей
+  fetch("https://651cf07044e393af2d58eb7f.mockapi.io/Coord")
+    .then((response) => response.json())
+    .then((data) => {
+      for (let i = 0; i < data.length; i++) {
+        coord[i].style.top = data[i].top;
+        coord[i].style.left = data[i].left;
+      }
+
+      // Установка значения куки
+      document.cookie = "cookieCoord=" + JSON.stringify(data);
+    })
+    .catch((error) => console.error("Ошибка:", error));
+}
 
 // всплывающие окна на картинке с информацией о цене
 document.addEventListener("DOMContentLoaded", () => {
@@ -106,7 +123,7 @@ document
   );
 
 document
-  .querySelector(".modal-window__flag")
+  .querySelector(".modal-window__close")
   .addEventListener("click", () => toggleModalDisplay("none"));
 
 // modal window 'placeholder' правлю,чтобы всегда была +7
