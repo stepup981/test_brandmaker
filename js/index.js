@@ -32,7 +32,7 @@ function setCookie(cookieCoord, value, options = {}) {
 
 function deleteCookie(cookieCoord) {
   setCookie(cookieCoord, "", {
-    expires: new Date(Date.now() - 1) // Установка прошедшей даты для удаления куки
+    expires: new Date(Date.now() - 1) // Удаление куки прошедшей датой. Можно установить что-то другое
   });
 }
 
@@ -44,7 +44,7 @@ if (!getCookie("cookieCoord")) {
         coord[i].style.top = data[i].top;
         coord[i].style.left = data[i].left;
       }
-      setCookie("cookieCoord", JSON.stringify(data)); // Сохранение данных в куки
+      setCookie("cookieCoord", JSON.stringify(data)); 
     })
     .catch((error) => console.error("Ошибка:", error));
 } else {
@@ -54,6 +54,7 @@ if (!getCookie("cookieCoord")) {
     coord[i].style.left = savedData[i].left;
   }
 }
+
 // всплывающие окна на картинке с информацией о цене
 document.addEventListener("DOMContentLoaded", () => {
   const infoChildren = document.querySelectorAll(".office__info-child");
