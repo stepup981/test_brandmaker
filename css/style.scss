@@ -454,7 +454,6 @@ input[type="number"] {
     width: 165px;
   }
 
-
   &__btn {
     background-color: var(--color-yellow);
     padding: 18px 78px;
@@ -496,6 +495,7 @@ input[type="number"] {
     &__breadcrumbs {
       padding-left: 20px;
     }
+
 
     &__info-popup-hidden.move-left .office__info-popup {
       right: 100%;

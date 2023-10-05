@@ -1,19 +1,42 @@
-// имитируем запрос с бэка на координаты точек на 1 картинке
+// имитируем запрос с бэка на координаты точек на 1 картинке. Использую mockAPI
 let coord = document.getElementsByClassName("office__info-child");
 
-// Проверка наличия куки
-if (document.cookie.includes("cookieCoord")) {
-  // Чтение значения куки
-  let cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)cookieCoord\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+function getCookie(cookieCoord) {
+  let matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + cookieCoord.replace(/([.$?*|{}()[\]\\/+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
 
-  // Использование значения куки для установки стилей
-  let data = JSON.parse(cookieValue);
-  for (let i = 0; i < data.length; i++) {
-    coord[i].style.top = data[i].top;
-    coord[i].style.left = data[i].left;
+function setCookie(cookieCoord, value, options = {}) {
+  options = {
+    path: '/',
+    expires: new Date(Date.now() + 10000), // выставил 10 сек для проверки
+    ...options
+  };
+
+  if (options.expires instanceof Date) {
+    options.expires = options.expires.toUTCString();
   }
-} else {
-  // Запрос данных через API и установка стилей
+
+  let updatedCookie = encodeURIComponent(cookieCoord) + "=" + encodeURIComponent(value);
+  for (let optionKey in options) {
+    updatedCookie += "; " + optionKey;
+    let optionValue = options[optionKey];
+    if (optionValue !== true) {
+      updatedCookie += "=" + optionValue;
+    }
+  }
+  document.cookie = updatedCookie;
+}
+
+function deleteCookie(cookieCoord) {
+  setCookie(cookieCoord, "", {
+    expires: new Date(Date.now() - 1) // Установка прошедшей даты для удаления куки
+  });
+}
+
+if (!getCookie("cookieCoord")) {
   fetch("https://651cf07044e393af2d58eb7f.mockapi.io/Coord")
     .then((response) => response.json())
     .then((data) => {
@@ -21,13 +44,16 @@ if (document.cookie.includes("cookieCoord")) {
         coord[i].style.top = data[i].top;
         coord[i].style.left = data[i].left;
       }
-
-      // Установка значения куки
-      document.cookie = "cookieCoord=" + JSON.stringify(data);
+      setCookie("cookieCoord", JSON.stringify(data)); // Сохранение данных в куки
     })
     .catch((error) => console.error("Ошибка:", error));
+} else {
+  let savedData = JSON.parse(getCookie("cookieCoord"));
+  for (let i = 0; i < savedData.length; i++) {
+    coord[i].style.top = savedData[i].top;
+    coord[i].style.left = savedData[i].left;
+  }
 }
-
 // всплывающие окна на картинке с информацией о цене
 document.addEventListener("DOMContentLoaded", () => {
   const infoChildren = document.querySelectorAll(".office__info-child");
